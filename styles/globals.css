@@ -14,3 +14,70 @@ a {
 * {
   box-sizing: border-box;
 }
+p {
+  color: #4a4a4a;
+}
+li {
+  color: #4a4a4a;
+}
+.logo {
+  margin-left: 80px;
+  margin-right: 3px;
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    margin-left: 0;
+  }
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .blocks {
+    margin-left: 50%;
+    margin-right: auto;
+  }
+  .img-hero {
+    margin-left: auto;
+    margin-top: 20px;
+  }
+}
+.logoText {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  color: #666;
+}
+.hero-section {
+  display: flex;
+  justifycontent: center;
+  alignitems: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.blocks {
+  width: 40%;
+  min-width: 500px;
+  margin-left: 70px;
+}
+.li-hero {
+  width: "50%" !important;
+}
+.is-vertically-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.columns.is-vcentered {
+  align-items: center;
+}
+.columns {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.75rem;
+}
+.features {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
