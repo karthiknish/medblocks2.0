@@ -1,13 +1,18 @@
 import Hero from "../components/Hero";
 import Head from "next/head";
+
 function index() {
   return (
     <>
       <Head>
         <title>Medblocks</title>
       </Head>
-      <Hero />{" "}
-      <section className="section has-text-centered has-background-light">
+      <Hero />
+      <section
+        style={{ marginTop: "170px" }}
+        className="section has-text-centered has-background-light"
+      >
+        {" "}
         <div className="container">
           <div className="columns features">
             <div className="column is-vertically-centered">
@@ -63,7 +68,6 @@ function index() {
             </div>
           </div>
         </div>
-
         <div className="container features">
           <div className="columns is-vcentered">
             <div className="column is-vertically-centered">
@@ -83,7 +87,6 @@ function index() {
             </div>
           </div>
         </div>
-
         <div className="container features">
           <div className="columns">
             <div className="column is-vertically-centered">

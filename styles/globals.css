@@ -35,12 +35,14 @@ li {
     margin-bottom: 0;
   }
   .blocks {
-    margin-left: 50%;
-    margin-right: auto;
+    display: none;
   }
   .img-hero {
     margin-left: auto;
     margin-top: 20px;
+  }
+  .video-container iframe {
+    width: 100%;
   }
 }
 .logoText {
@@ -54,16 +56,18 @@ li {
   justifycontent: center;
   alignitems: center;
   margin-top: 100px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 .blocks {
-  width: 40%;
-  min-width: 500px;
-  margin-left: 70px;
+  /* width: 50%; */
+  min-width: 200px;
+  margin-left: 50px;
+  padding: 10px;
+  flex: 0.5;
 }
-.li-hero {
+/* .li-hero {
   width: "50%" !important;
-}
+} */
 .is-vertically-centered {
   display: flex;
   align-items: center;
