@@ -151,7 +151,7 @@ function Item({ height, color, words, fontSize, image, width }) {
           backgroundImage: `url(${image})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "70%",
+          backgroundSize: "50%",
         }}
         whileHover={{
           scale: 1.03,
