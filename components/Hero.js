@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-
+import { useState } from "react";
 function Hero() {
+  const [isHovered, setHovered] = useState(false);
   return (
     <div className="hero-section">
       <motion.div
@@ -25,6 +26,12 @@ function Hero() {
           <li>
             <motion.div
               layout
+              onMouseEnter={() => {
+                setHovered(true);
+              }}
+              onMouseLeave={() => {
+                setHovered(false);
+              }}
               whileHover={{
                 scale: 1.03,
                 boxShadow: "0px 3px 3px rgba(0,0,0,0.15)",
@@ -40,12 +47,31 @@ function Hero() {
                 alignItems: "center",
                 borderRadius: "5px",
                 padding: "10px",
+                height: "100px",
+                zIndex: 10,
               }}
             >
               <img
                 width="60"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png"
               />
+              {isHovered && (
+                <motion.div
+                  initial={{ y: -10, scale: 0 }}
+                  animate={{ y: 0, scale: 1 }}
+                  style={{
+                    backgroundColor: "#282A35",
+                    zIndex: 20,
+                    marginTop: "10px",
+                    marginRight: "40px",
+                    padding: "10px",
+                    borderRadius: 10,
+                    boxShadow: "5px 10px 10px #8888",
+                  }}
+                >
+                  <p style={{ color: "white" }}>OAuth</p>
+                </motion.div>
+              )}
             </motion.div>
           </li>
         </motion.ul>
@@ -68,7 +94,7 @@ function Hero() {
         <img
           className="img-hero"
           src="medblocks.png"
-          style={{ objectFit: "contain", marginRight: "auto", flex: 0.8 }}
+          style={{ objectFit: "contain" }}
         />
         <p style={{ fontSize: "30px", textAlign: "center" }}>
           The stack for building modern healthcare applications
@@ -101,22 +127,31 @@ function Hero() {
   );
 }
 function Item({ height, color, words, fontSize, image, width }) {
+  const [hover, setHover] = useState("");
+  const [isHovered, setHovered] = useState(false);
   return (
-    <li className="li-hero">
+    <li style={{ width: "80%" }} className="li-hero">
       <motion.div
         // initial={{ y: -40, opacity: 0 }}
         // animate={{ y: 0, opacity: 1 }}
         layout
         style={{
           background: color,
-          height,
+          height: "100px",
+          // width: "200px",
+          // height: "200px",
+          // objectFit: "contain",
           padding: "15px",
           borderRadius: 5,
-          margin: "10px",
+          margin: "5px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           cursor: "default",
+          backgroundImage: `url(${image})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "70%",
         }}
         whileHover={{
           scale: 1.03,
@@ -126,30 +161,52 @@ function Item({ height, color, words, fontSize, image, width }) {
           scale: 1.12,
           boxShadow: "0px 5px 5px rgba(0,0,0,0.1)",
         }}
+        onMouseEnter={() => {
+          setHovered(true);
+          setHover(words);
+        }}
+        onMouseLeave={() => {
+          setHovered(false);
+          setHover("");
+        }}
       >
-        {!image ? (
+        {words && !image && (
           <p style={{ color: "white", fontSize: fontSize }}>{words}</p>
-        ) : (
-          <img width={width} src={image} />
+        )}
+        {hover && image && (
+          <motion.div
+            initial={{ y: -10, scale: 0 }}
+            animate={{ y: 0, scale: 1 }}
+            style={{
+              backgroundColor: "#282A35",
+              zIndex: 10,
+              marginTop: "100px",
+              padding: "10px",
+              borderRadius: 10,
+              boxShadow: "5px 10px 10px #8888",
+            }}
+          >
+            <p style={{ color: "white" }}>{hover}</p>
+          </motion.div>
         )}
       </motion.div>
     </li>
   );
 }
 
-const items1 = [90, 90, 90, 90];
+const items1 = [100, 100, 100, 100];
 const items2 = [90, 90, 90];
 const fontSize = ["20px", "20px", "20px", "20px"];
-const color1 = ["#D6E8F9", "#666666", "#FFFFE6", "#00A6DF"];
+const color1 = ["#D6E8F9", "#666666", "#af9200", "#00A6DF"];
 const image1 = [
   "https://www.openehr.org/static/img/Logo.svg",
   "https://www.signstoyou.com/signs/previewimages/high-double-arrow-shaped-3876.png",
   "https://developer.allscripts.com/content/fhir/images/fhir.png",
-  "https://www.snomed.org/SNOMED/media/SNOMED/other/brand-mark.png?ext=.png",
+  "https://i.imgur.com/XHEM39i.png",
 ];
-const width1 = ["150", "100", "150", "100"];
+const width1 = ["250", "30", "250", "200"];
 const color2 = ["#0041C2", "#3090C7", "red"];
-const words1 = ["openEHR", `I E`, "FHIR", "SNOMED"];
+const words1 = ["openEHR", `Integration Engine`, "FHIR", "SNOMED"];
 const words2 = ["Medication App", "React app", "Your Next app?"];
 const anim = {
   hidden: { opacity: 0, y: -100 },

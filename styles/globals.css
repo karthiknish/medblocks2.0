@@ -35,7 +35,8 @@ li {
     margin-bottom: 0;
   }
   .blocks {
-    display: none;
+    /* display: none; */
+    margin-left: 0;
   }
   .img-hero {
     margin-left: auto;
@@ -53,17 +54,19 @@ li {
 }
 .hero-section {
   display: flex;
+  flex-direction: column;
   justifycontent: center;
   alignitems: center;
-  margin-top: 100px;
+  margin-top: 90px;
   /* margin-bottom: 100px; */
 }
 .blocks {
   /* width: 50%; */
-  min-width: 200px;
-  margin-left: 50px;
+  /* min-width: 200px; */
+  /* margin-left: 50px; */
   padding: 10px;
-  flex: 0.5;
+  margin: 20px;
+  /* flex: 0.5; */
 }
 /* .li-hero {
   width: "50%" !important;
