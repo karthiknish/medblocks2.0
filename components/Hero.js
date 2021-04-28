@@ -18,7 +18,6 @@ function Hero() {
               i={i}
               color={color2[i]}
               words={words2[i]}
-              fontSize={fontSize[i]}
             />
           ))}
         </motion.ul>
@@ -84,7 +83,6 @@ function Hero() {
               color={color1[i]}
               words={words1[i]}
               image={image1[i]}
-              fontSize={fontSize[i]}
               width={width1[i]}
             />
           ))}
@@ -174,7 +172,9 @@ function Item({ height, color, words, fontSize, image, width }) {
         }}
       >
         {words && !image && (
-          <p style={{ color: "white", fontSize: fontSize }}>{words}</p>
+          <p className="hero-p" style={{ color: "white" }}>
+            {words}
+          </p>
         )}
         {hover && image && (
           <motion.div
@@ -198,8 +198,8 @@ function Item({ height, color, words, fontSize, image, width }) {
 }
 
 const items1 = [100, 100, 100, 100];
-const items2 = [90, 90, 90];
-const fontSize = ["20px", "20px", "20px", "20px"];
+const items2 = [100, 100, 100];
+
 const color1 = ["#D6E8F9", "#666666", "#f2d133", "#00A6DF"];
 const image1 = [
   "https://www.openehr.org/static/img/Logo.svg",

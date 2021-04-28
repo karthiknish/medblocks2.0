@@ -45,6 +45,9 @@ li {
   .video-container iframe {
     width: 100%;
   }
+  .hero-p {
+    font-size: 1em;
+  }
 }
 .logoText {
   font-family: "Source Sans Pro", sans-serif;
@@ -86,4 +89,7 @@ li {
 .features {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+.hero-p {
+  font-size: 20px;
 }
