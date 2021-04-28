@@ -54,7 +54,6 @@ li {
 }
 .hero-section {
   display: flex;
-  flex-direction: column;
   justifycontent: center;
   alignitems: center;
   margin-top: 90px;
@@ -66,7 +65,7 @@ li {
   /* margin-left: 50px; */
   padding: 10px;
   margin: 20px;
-  /* flex: 0.5; */
+  flex: 0.5;
 }
 /* .li-hero {
   width: "50%" !important;

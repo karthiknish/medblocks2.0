@@ -130,7 +130,10 @@ function Item({ height, color, words, fontSize, image, width }) {
   const [hover, setHover] = useState("");
   const [isHovered, setHovered] = useState(false);
   return (
-    <li style={{ width: "80%" }} className="li-hero">
+    <li
+      style={{ width: `${words === "Integration Engine" ? "20%" : "100%"}` }}
+      className="li-hero"
+    >
       <motion.div
         // initial={{ y: -40, opacity: 0 }}
         // animate={{ y: 0, opacity: 1 }}
@@ -151,7 +154,7 @@ function Item({ height, color, words, fontSize, image, width }) {
           backgroundImage: `url(${image})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "50%",
+          backgroundSize: "contain",
         }}
         whileHover={{
           scale: 1.03,
@@ -197,7 +200,7 @@ function Item({ height, color, words, fontSize, image, width }) {
 const items1 = [100, 100, 100, 100];
 const items2 = [90, 90, 90];
 const fontSize = ["20px", "20px", "20px", "20px"];
-const color1 = ["#D6E8F9", "#666666", "#af9200", "#00A6DF"];
+const color1 = ["#D6E8F9", "#666666", "#f2d133", "#00A6DF"];
 const image1 = [
   "https://www.openehr.org/static/img/Logo.svg",
   "https://www.signstoyou.com/signs/previewimages/high-double-arrow-shaped-3876.png",
